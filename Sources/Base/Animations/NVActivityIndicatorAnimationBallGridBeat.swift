@@ -29,7 +29,10 @@
 import UIKit
 
 class NVActivityIndicatorAnimationBallGridBeat: NVActivityIndicatorAnimationDelegate {
-
+    func setUpAnimation(in layer: CALayer, size: CGSize, colors: [UIColor]) {
+        
+    }
+    
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let circleSpacing: CGFloat = 2
         let circleSize = (size.width - circleSpacing * 2) / 3

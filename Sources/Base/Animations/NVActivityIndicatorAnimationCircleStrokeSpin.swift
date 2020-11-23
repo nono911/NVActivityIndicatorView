@@ -29,7 +29,10 @@
 import UIKit
 
 class NVActivityIndicatorAnimationCircleStrokeSpin: NVActivityIndicatorAnimationDelegate {
-
+    func setUpAnimation(in layer: CALayer, size: CGSize, colors: [UIColor]) {
+        
+    }
+    
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let beginTime: Double = 0.5
         let strokeStartDuration: Double = 1.2

@@ -29,7 +29,10 @@
 import UIKit
 
 class NVActivityIndicatorAnimationTriangleSkewSpin: NVActivityIndicatorAnimationDelegate {
-
+    func setUpAnimation(in layer: CALayer, size: CGSize, colors: [UIColor]) {
+        
+    }
+    
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let x = (layer.bounds.size.width - size.width) / 2
         let y = (layer.bounds.size.height - size.height) / 2

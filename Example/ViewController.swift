@@ -49,6 +49,10 @@ class ViewController: UIViewController, NVActivityIndicatorViewable {
             let x = index % cols * cellWidth
             let y = index / cols * cellHeight
             let frame = CGRect(x: x, y: y, width: cellWidth, height: cellHeight)
+            var colors:[UIColor] = []
+            
+            
+            
             let activityIndicatorView = NVActivityIndicatorView(frame: frame,
                                                                 type: indicatorType)
             let animationTypeLabel = UILabel(frame: frame)
@@ -63,6 +67,14 @@ class ViewController: UIViewController, NVActivityIndicatorViewable {
             if indicatorType == NVActivityIndicatorType.orbit {
                 activityIndicatorView.padding = 0
             }
+            
+            if indicatorType == .ballPulseMultipleColor {
+                colors.append(UIColor.red)
+                colors.append(UIColor.blue)
+                colors.append(UIColor.green)
+                activityIndicatorView.colors = colors
+            }
+            
             self.view.addSubview(activityIndicatorView)
             self.view.addSubview(animationTypeLabel)
             activityIndicatorView.startAnimating()

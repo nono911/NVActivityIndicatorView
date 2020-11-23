@@ -35,6 +35,10 @@ class NVActivityIndicatorAnimationOrbit: NVActivityIndicatorAnimationDelegate {
 
     var coreSize: CGFloat = 0
     var satelliteSize: CGFloat = 0
+    
+    func setUpAnimation(in layer: CALayer, size: CGSize, colors: [UIColor]) {
+        
+    }
 
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         coreSize = size.width / (1 + satelliteCoreRatio + distanceRatio)

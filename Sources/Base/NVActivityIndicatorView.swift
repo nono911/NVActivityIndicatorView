@@ -91,11 +91,14 @@ public enum NVActivityIndicatorType: CaseIterable {
      - returns: Instance of NVActivityIndicatorAnimationBallClipRotate.
      */
     case ballClipRotate
+    
+    case ballPulseMultipleColor
     /**
      SquareSpin.
 
      - returns: Instance of NVActivityIndicatorAnimationSquareSpin.
      */
+    
     case squareSpin
     /**
      BallClipRotatePulse.
@@ -343,6 +346,8 @@ public enum NVActivityIndicatorType: CaseIterable {
             return NVActivityIndicatorAnimationAudioEqualizer()
         case .circleStrokeSpin:
             return NVActivityIndicatorAnimationCircleStrokeSpin()
+        case .ballPulseMultipleColor:
+            return NVActivityIndicatorAnimationBallPulse()
         }
     }
 }
@@ -435,6 +440,7 @@ public final class NVActivityIndicatorView: UIView {
 
     /// Color of activity indicator view.
     @IBInspectable public var color: UIColor = NVActivityIndicatorView.DEFAULT_COLOR
+    @IBInspectable public var colors: [UIColor] = [NVActivityIndicatorView.DEFAULT_COLOR]
 
     /// Padding of activity indicator view.
     @IBInspectable public var padding: CGFloat = NVActivityIndicatorView.DEFAULT_PADDING
@@ -553,7 +559,16 @@ public final class NVActivityIndicatorView: UIView {
 
         layer.sublayers = nil
         animationRect.size = CGSize(width: minEdge, height: minEdge)
-        animation.setUpAnimation(in: layer, size: animationRect.size, color: color)
+        
+        if colors.count == 0 {
+            animation.setUpAnimation(in: layer, size: animationRect.size, color: color)
+        } else {
+            if type == .ballPulseMultipleColor {
+                animation.setUpAnimation(in: layer, size: animationRect.size, colors: colors)
+            } else {
+                animation.setUpAnimation(in: layer, size: animationRect.size, color: color)
+            }
+        }
     }
 }
 #endif

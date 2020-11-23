@@ -29,7 +29,10 @@
 import UIKit
 
 class NVActivityIndicatorAnimationLineScaleParty: NVActivityIndicatorAnimationDelegate {
-
+    func setUpAnimation(in layer: CALayer, size: CGSize, colors: [UIColor]) {
+        
+    }
+    
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let lineSize = size.width / 7
         let x = (layer.bounds.size.width - size.width) / 2

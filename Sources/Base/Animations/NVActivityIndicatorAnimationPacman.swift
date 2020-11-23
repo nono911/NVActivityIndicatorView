@@ -29,7 +29,11 @@
 import UIKit
 
 class NVActivityIndicatorAnimationPacman: NVActivityIndicatorAnimationDelegate {
-
+    
+    func setUpAnimation(in layer: CALayer, size: CGSize, colors: [UIColor]) {
+        
+    }
+    
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         circleInLayer(layer, size: size, color: color)
         pacmanInLayer(layer, size: size, color: color)

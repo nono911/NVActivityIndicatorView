@@ -29,7 +29,10 @@
 import UIKit
 
 class NVActivityIndicatorAnimationBallZigZagDeflect: NVActivityIndicatorAnimationDelegate {
-
+    func setUpAnimation(in layer: CALayer, size: CGSize, colors: [UIColor]) {
+        
+    }
+    
     func setUpAnimation(in layer: CALayer, size: CGSize, color: UIColor) {
         let circleSize: CGFloat = size.width / 5
         let duration: CFTimeInterval = 0.75
